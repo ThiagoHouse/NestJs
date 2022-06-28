@@ -15,16 +15,16 @@ export class CreateUserDto {
       message: 'Informe um endereço de email válido',
     },
   )
-  @MaxLength(20, {
-    message: 'O endereço de email deve ter menos de 20 caracteres',
+  @MaxLength(200, {
+    message: 'O endereço de email deve ter menos de 200 caracteres',
   })
   email: string;
 
   @IsNotEmpty({
     message: 'Informe o nome do usuário',
   })
-  @MaxLength(10, {
-    message: 'O nome deve ter menos de 10 caracteres',
+  @MaxLength(100, {
+    message: 'O nome deve ter menos de 100 caracteres',
   })
   name: string;
 
