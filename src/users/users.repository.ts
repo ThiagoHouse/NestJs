@@ -25,7 +25,8 @@ export class UserRepository extends Repository<User> {
     user.confirmationToken = crypto.randomBytes(32).toString('hex');
     user.salt = await bcrypt.genSalt();
     user.password = await this.hashPassword(password, user.salt);
-    return user;
+
+    console.log(user);
     try {
       await user.save();
       delete user.password;
